@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentsList</title>
+</head>
+<body>
+<ul>
+    <!--Student.html-->
+    <!--for循环-->
+    {% for student in student_list %}
+        <li> {{ student }} </li>
+    {% endfor %}
+
+    <!--loop获取循环信息-->
+    {% for student in student_list %}
+        {% if loop.first %}
+            <li style="color: red"> {{ loop.index }}:{{ loop.index0 }}:{{ student }} </li>
+        {% elif loop.last %}
+            <li style="color: green"> {{ loop.index }}:{{ loop.index0 }}:{{ student }} </li>
+        {% else %}
+            <li style="color: grey"> {{ loop.index }}:{{ loop.index0 }}:{{ student }} </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<hr>
+    <!--if判断-->
+    {% if a == 5 %}
+        这是A
+    {% endif %}
+</body>
+</html>

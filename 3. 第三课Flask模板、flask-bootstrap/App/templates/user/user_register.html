@@ -1,0 +1,23 @@
+{% extends 'user/base_user.html' %}
+<!--user/user_register.html-->
+{% block header %}
+    <!--include使用-->
+    {% include 'banner.html' %}
+{% endblock %}
+{% block content %}
+    <h2>这是用户注册的内容</h2>
+    <!--宏定义函数hello-->
+    {% macro hello(name) %}
+        <h2>这是一个hello函数</h2>
+    {% endmacro %}
+
+    <!--调用宏定义函数hello-->
+    {{ hello() }}
+    {{ hello() }}
+    {{ hello() }}
+
+    <!--导入函数并调用-->
+    {% from 'html_func.html' import hehe, goods %}
+    {{ hehe('小李') }}
+    {{ goods('水杯') }}
+{% endblock %}
