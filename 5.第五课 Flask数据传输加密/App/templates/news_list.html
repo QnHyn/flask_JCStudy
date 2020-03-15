@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News list</title>
+    <!-- 传入时间下面方法不适用因为用不了JS的时间函数，使用动态加载 -->
+    <!--<script type="text/javascript" src="{{ url_for('blue.get_show') }}"></script>-->
+    <script type="text/javascript">
+        // 这个在前台控制台Elements中才能看见 source中看不到
+        document.write('<script type="text/javascript" src="/getshow/?t='+Date.parse(new Date())+'"><\/script>');
+    </script>
+</head>
+<body>
+<h2>今日新闻</h2>
+<script type="text/javascript">
+    /*document.write("{{ news_content|safe }}");*/
+    document.write(showDeHtml("{{ encode_content_twice|safe }}"));
+</script>
+<!--{ news_content|safe }}-->
+</body>
+</html>
